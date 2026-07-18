@@ -1,0 +1,8 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <div class="card-group-element card-group-element-align-center card-group-element-columns-3">
+        <f:for each="{hallEvents}" as="hall">
+            <f:render partial="Calendar/Card" arguments="{hall: hall}" />
+        </f:for>
+    </div>
+</f:section>

@@ -1,0 +1,23 @@
+plugin.tx_saalevent {
+    view {
+        templateRootPaths {
+            10 = EXT:saalevent/Resources/Private/Templates/
+        }
+        partialRootPaths {
+            10 = EXT:saalevent/Resources/Private/Partials/
+        }
+        layoutRootPaths {
+            10 = EXT:saalevent/Resources/Private/Layouts/
+        }
+    }
+    settings {
+        icsUrlSaal1 = https://neu2.gsc-muenchen.de/fileadmin/ics-proxy.php?url=https://outlook.office365.com/owa/calendar/bc4bed22634e4c958de7eb821d509e75@gsc-muenchen.de/8d2d6aa9b0034c408993a2a7b8730a2f3871496582171700852/calendar.ics
+        icsUrlSaal2 = https://outlook.office365.com/owa/calendar/bc4bed22634e4c958de7eb821d509e75@gsc-muenchen.de/73af8635c920431f8ef774028114653710081318213732744972/calendar.ics
+        icsUrlSaal3 = https://outlook.office365.com/owa/calendar/bc4bed22634e4c958de7eb821d509e75@gsc-muenchen.de/b007e845ce0046028e1f0a4c3a91c3ed10304925515917227367/calendar.ics
+        enableCache = 0
+    }
+}
+
+page.includeCSS {
+  saalevent = EXT:saalevent/Resources/Public/Css/custom.css
+}

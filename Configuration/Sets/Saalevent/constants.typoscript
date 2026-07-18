@@ -1,0 +1,7 @@
+plugin.tx_saalevent_saalevent {
+  view {
+    templateRootPaths.0 = EXT:saalevent/Resources/Private/Templates/
+    partialRootPaths.0 = EXT:saalevent/Resources/Private/Partials/
+    layoutRootPaths.0 = EXT:saalevent/Resources/Private/Layouts/
+  }
+}

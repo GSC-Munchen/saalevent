@@ -1,0 +1,29 @@
+{
+  "name": "saalevent/saalevent",
+  "type": "typo3-cms-extension",
+  "description": "GSC Extension zur Anzeige des laufenden/nächsten Events in unseren Sälen.",
+  "homepage": "https://www.gsc-muenchen.de",
+  "license": "GPL-2.0-or-later",
+  "keywords": ["TYPO3 CMS"],
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "IAS",
+      "email": "ias@gsc-muenchen.de",
+      "homepage": "https://www.gsc-muenchen.de"
+    }
+  ], 
+  "require": {
+    "typo3/cms-core": "^14.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Saalevent\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "saalevent"
+    }
+  }
+}
