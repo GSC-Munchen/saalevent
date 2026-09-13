@@ -17,7 +17,8 @@ class CalendarController extends ActionController
 
     public function listAction(): ResponseInterface
     {
-
+        // $this->settings is guaranteed to be an array by ActionController,
+        // but individual keys may be absent if not configured via TypoScript/Flexform.
         $halls = [
             [
                 'title' => 'Saal 1',
@@ -44,11 +45,11 @@ class CalendarController extends ActionController
         $hallEvents = [];
         foreach ($halls as $hall) {
             $hallEvents[] = [
-                'title' => $hall['title'],
-                'image' => $hall['image'],
+                'title' => (string)$hall['title'],
+                'image' => (string)$hall['image'],
                 'event' => $this->icsService->getEventForHall(
-                    $hall['url'],
-                    $hall['index'],
+                    (string)$hall['url'],
+                    (int)$hall['index'],
                     $enableCache
                 ),
             ];
