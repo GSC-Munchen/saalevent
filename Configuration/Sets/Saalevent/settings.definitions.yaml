@@ -1,0 +1,33 @@
+settings:
+  saalevent.icsUrlSaal1:
+    label: 'ICS-URL für Saal 1'
+    description: >
+      Öffentliche ICS-Kalenderadresse für Saal 1.
+    type: string
+    default: 'https://example.com/ics/saal1.ics'
+    category: saalevent
+
+  saalevent.icsUrlSaal2:
+    label: 'ICS-URL für Saal 2'
+    description: >
+      Öffentliche ICS-Kalenderadresse für Saal 2.
+    type: string
+    default: 'https://example.com/ics/saal2.ics'
+    category: saalevent
+
+  saalevent.icsUrlSaal3:
+    label: 'ICS-URL für Saal 3'
+    description: >
+      Öffentliche ICS-Kalenderadresse für Saal 3.
+    type: string
+    default: 'https://example.com/ics/saal3.ics'
+    category: saalevent
+
+categories:
+  saalevent:
+    label: 'Saalevent'
+    description: >
+      Hinterlegen Sie hier die ICS-Kalenderadressen für die drei Säle.
+      Solange für einen Saal noch die vorgegebene Beispieladresse (https://example.com/...) eingetragen ist, zeigt das Frontend für diesen Saal den Hinweis
+      "URL für diesen Saal ist nicht konfiguriert" an, statt einen Termin abzurufen. Bitte tragen Sie die tatsächliche ICS-URL des jeweiligen
+      Kalenders ein, um die Anzeige zu aktivieren.

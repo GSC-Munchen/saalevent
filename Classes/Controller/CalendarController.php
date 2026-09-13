@@ -2,12 +2,20 @@
 
 namespace Saalevent\Controller;
 
+use Saalevent\Domain\Model\Event;
 use Saalevent\Service\IcsService;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class CalendarController extends ActionController
 {
+    // Muss mit den Default-Werten in Configuration/Sets/Saalevent/settings.definitions.yaml übereinstimmen.
+    protected const PLACEHOLDER_ICS_URLS = [
+        'https://example.com/ics/saal1.ics',
+        'https://example.com/ics/saal2.ics',
+        'https://example.com/ics/saal3.ics',
+    ];
+
     protected IcsService $icsService;
 
     public function __construct(IcsService $icsService)
@@ -44,14 +52,18 @@ class CalendarController extends ActionController
 
         $hallEvents = [];
         foreach ($halls as $hall) {
+            $url = trim((string)$hall['url']);
+
+            if ($url === '' || in_array($url, self::PLACEHOLDER_ICS_URLS, true)) {
+                $event = Event::createError('URL für diesen Saal ist nicht konfiguriert');
+            } else {
+                $event = $this->icsService->getEventForHall($url, (int)$hall['index'], $enableCache);
+            }
+
             $hallEvents[] = [
                 'title' => (string)$hall['title'],
                 'image' => (string)$hall['image'],
-                'event' => $this->icsService->getEventForHall(
-                    (string)$hall['url'],
-                    (int)$hall['index'],
-                    $enableCache
-                ),
+                'event' => $event,
             ];
         }
 

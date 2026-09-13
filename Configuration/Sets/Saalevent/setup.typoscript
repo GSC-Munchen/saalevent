@@ -11,9 +11,9 @@ plugin.tx_saalevent {
         }
     }
     settings {
-        icsUrlSaal1 = https://www.gsc-muenchen.de/fileadmin/ics-proxy.php?url=https://outlook.office365.com/owa/calendar/96e862bdeeb0422593414e89769913d9@gsc-muenchen.de/7efda975dbb54b5cbc7ad1be19efe0c315106191044859654434/calendar.ics
-        icsUrlSaal2 = https://www.gsc-muenchen.de/fileadmin/ics-proxy.php?url=https://outlook.office365.com/owa/calendar/a60f75db93244b39b3111cc21189bc61@gsc-muenchen.de/538b2fe43d624a9db6c947ea4e7c430b6634615803017633700/calendar.ics
-        icsUrlSaal3 = https://www.gsc-muenchen.de/fileadmin/ics-proxy.php?url=https://outlook.office365.com/owa/calendar/2b83b9c1e72b41d699c706c6d9108fc9@gsc-muenchen.de/003ae0a823754194be0c09af7cdae32413871493945840853106/calendar.ics
+        icsUrlSaal1 = {$saalevent.icsUrlSaal1}
+        icsUrlSaal2 = {$saalevent.icsUrlSaal2}
+        icsUrlSaal3 = {$saalevent.icsUrlSaal3}
         enableCache = 0
     }
 }
